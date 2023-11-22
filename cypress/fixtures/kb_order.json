@@ -1,0 +1,37 @@
+{
+  "title": "Kapital Bank",
+  "mobileNumber": "511111111",
+  "FIN": "123XH45",
+  "OTP": "1234",
+  "en": {
+    "main_page": {
+      "card_count": 4,
+      "card_list": [
+        {
+          "BRCB_BLACK": {
+            "cards_section__top": {
+              "container": {
+                "h1_text": " Birbank Cashback installment ",
+                "p": " It is a unique card providing cashless payments with installment starting from 1.5% cashback, interest-free and commission-free. "
+              }
+            },
+            "cards_section__bottom": {
+              "li": {
+                "li_count": 3,
+                "li_text": [
+                  { "text": "Bonus ","span": "Up to 30% cashback and Double VAT"},
+                  { "text": "Price of the card ", "span":"free"  },
+                  { "text": "Grace period ", "span": "up to 63 days" }
+                ]
+              },
+              "img": "birbank-cashback-home",
+              "a_herf": "https://ccl.kapitalbank.az/en/order/step/BRCB_BLACK?t=kb&amp;tvr_id=",
+              "a_text": "Order"
+            },
+            "order":""
+          }
+        }
+      ]
+    }
+  }
+}
