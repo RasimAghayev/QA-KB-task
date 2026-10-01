@@ -13,6 +13,6 @@
   "author": "Rasim Aghayev",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.5.1"
+    "cypress": "^16.0.0"
   }
 }
