@@ -1,4 +1,6 @@
 # QA-KB-task
+![Views](https://hits.sh/github.com/RasimAghayev/QA-KB-task.svg?label=views&color=0e75b6)
+
 
 A Cypress QA test-automation exercise against **Kapital Bank**'s public
 website (`kapitalbank.az`) — package.json's own description calls it a
