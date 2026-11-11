@@ -1,0 +1,10 @@
+* text=auto
+
+*.md diff=markdown
+*.json diff=json
+*.js diff=js
+*.css diff=css
+*.html diff=html
+
+/.github export-ignore
+CHANGELOG.md export-ignore
