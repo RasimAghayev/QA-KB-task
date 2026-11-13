@@ -1,0 +1,43 @@
+# QA-KB-task — Phase 5 container baseline.
+# This repo has no server: it is a Cypress E2E suite that drives an external
+# production site (kapitalbank.az). The compose file therefore models only the
+# test service; `make up` builds+verifies then runs the suite once.
+#
+# Reserved port block for this repo (projects/info/state/ports.md):
+#   QA-KB-task : 20210-20219
+# No port is mapped: there is nothing to expose. The block is held so a future
+# service added to this compose file never collides with another repo.
+#
+# Run headless:  docker compose run --rm test
+# Full cycle:    make verify && make up
+
+name: qa-kb-task-p5
+
+services:
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+    image: qa-kb-task-p5:test
+    container_name: qa-kb-task-p5-test
+    environment:
+      - CI=true
+      - CYPRESS_INSTALL_BINARY=0
+      - VIDEO=false
+      - SCREENSHOT=false
+      - CYPRESS_BASE_URL=https://www.kapitalbank.az/en
+    # No depends_on: the test service has no runtime dependencies.
+    # No ports: this repo exposes nothing.
+    # No healthcheck: Cypress runs to completion, it is not a long-lived
+    # service; health is expressed as the build/test exit code.
+    tmpfs:
+      - /tmp:size=256M
+    # Read-only root: Cypress writes screenshots/videos under cypress/
+    # by default; with VIDEO=false/SCREENSHOT=false there is nothing to
+    # write, so a read-only FS is safe and documents the intent.
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
