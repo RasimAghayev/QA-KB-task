@@ -1,0 +1,60 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+.github
+
+# Hooks / editor artifacts
+.githooks
+.idea
+.vscode
+.DS_Store
+Thumbs.db
+
+# Environment & secrets (never bake real values into an image)
+.env
+.env.*
+!.env.example
+
+# Local keys / scratch
+.rnd
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Dependency cache (npm ci is run inside the build)
+node_modules
+.npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cypress runtime artifacts (videos, screenshots, downloads)
+cypress/videos
+cypress/screenshots
+cypress/downloads
+
+# Manual-QA artifacts — NOT part of the automated product.
+# Decision (Phase 5): KB_manualOrderCard.mp4, KB_Manual_Test.xlsx and the two
+# screenshots are manual-QA deliverables checked in alongside the code; they are
+# not needed to build or run the Cypress suite, so they are excluded from the
+# image. They stay in the repo (gitignored below) because they document the
+# manual test counterpart, but they never reach Docker.
+KB_manualOrderCard.mp4
+KB_Manual_Test.xlsx
+Screenshot 2023-11-22 182322.png
+Screenshot 2023-11-22 182439.png
+
+# Documentation that is not needed to run the suite
+docs
+README.md
+CHANGELOG.md
+
+# Test reports / coverage / scratch
+*.log
+coverage
+test-results
+scratch
+_scratch
